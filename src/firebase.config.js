@@ -1,23 +1,28 @@
 import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider,signInWithPopup } from 'firebase/auth'
 import { getFirestore } from 'firebase/firestore'
 import { getStorage } from 'firebase/storage'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAezMMshPN4Zfr926Iy5AqXHZJ0GvPSz4U",
-  authDomain: "gadget-groove-2d09f.firebaseapp.com",
-  projectId: "gadget-groove-2d09f",
-  storageBucket: "gadget-groove-2d09f.appspot.com",
-  messagingSenderId: "871935927688",
-  appId: "1:871935927688:web:135b020572018d7c63c63d",
-  measurementId: "G-8VQXCDDLNS"
-}
+  apiKey: "AIzaSyCkEQsVnoOzcDCW_Ck3vRqtuBzui9LN1JA",
+  authDomain: "gadget-groove-b6688.firebaseapp.com",
+  projectId: "gadget-groove-b6688",
+  storageBucket: "gadget-groove-b6688.appspot.com",
+  messagingSenderId: "18998295767",
+  appId: "1:18998295767:web:853f2ab353503873484492",
+  measurementId: "G-X91PMDGCWB"
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
+const provider = new GoogleAuthProvider()
 
 export const auth = getAuth(app)
 export const db = getFirestore(app)
 export const storage = getStorage(app)
+
+const googleLogin = document.getElementById('google-login-btn');
+googleLogin.addEventListener('click', function() {
+alert('clicked')})
 
 export default app
