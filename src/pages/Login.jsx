@@ -56,29 +56,13 @@ const Login = () => {
             ) : (
               <Col lg='6' className='m-auto text-center'>
                 <h3 className='fw-bold mb-4'>Login</h3>
-                <h3 className='fw-bold mb-4'>use guest@gmail.com </h3>
-                <h3 className='fw-bold mb-4'> password "guest123"</h3>
-  
+        
                 <Form className='auth__form' onSubmit={signIn}>
-                  <FormGroup className='form__group'>
-                    <input
-                      type='email'
-                      placeholder='Enter your email'
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </FormGroup>
-                  <FormGroup className='form__group'>
-                    <input
-                      type='password'
-                      placeholder='Enter your password'
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                  </FormGroup>
+                  
+                 
 
                   <button onClick={handleGoogle} className='buy__btn auth__btn'>
-                    Login with Google
+                    sign in with Google
                   </button>
                   <p>
                     Don't have an account{' '}

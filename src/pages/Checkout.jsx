@@ -103,7 +103,7 @@ const Checkout = () => {
                             <a
                               target='_blank'
                               rel='noopener noreferrer'
-                              href='https://wa.me/+923113408535'
+                              href='https://wa.me/+923043321061'
                               
                             >
                               Click to redirect to seller
