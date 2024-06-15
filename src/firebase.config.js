@@ -17,12 +17,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const provider = new GoogleAuthProvider()
 
-export const auth = getAuth(app)
+export const auth = getAuth(app);
+auth.languageCode = 'en';
 export const db = getFirestore(app)
 export const storage = getStorage(app)
 
-const googleLogin = document.getElementById('google-login-btn');
-googleLogin.addEventListener('click', function() {
-alert('clicked')})
+
+
 
 export default app

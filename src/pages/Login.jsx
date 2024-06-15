@@ -4,10 +4,12 @@ import { Container, Row, Col, Form, FormGroup } from 'reactstrap'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase.config'
 import { toast } from 'react-toastify'
-
+import { getAuth, GoogleAuthProvider,signInWithPopup } from 'firebase/auth'
 import Helmet from '../components/Helmet/Helmet'
 import '../styles/login.css'
 import { async } from '@firebase/util'
+
+
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -38,7 +40,10 @@ const Login = () => {
       toast.error(error.message)
     }
   }
-
+  const handleGoogle = async (e) =>{
+    const provider = await  new GoogleAuthProvider();
+    return signInWithPopup(auth, provider)
+  }
   return (
     <Helmet title='Login'>
       <section>
@@ -53,11 +58,7 @@ const Login = () => {
                 <h3 className='fw-bold mb-4'>Login</h3>
                 <h3 className='fw-bold mb-4'>use guest@gmail.com </h3>
                 <h3 className='fw-bold mb-4'> password "guest123"</h3>
-                <div class="input">
-<button id="google-login-btn" class="google-button">
-<i class="fab fa-google"></i> Login with Google
-</button>
-</div>
+  
                 <Form className='auth__form' onSubmit={signIn}>
                   <FormGroup className='form__group'>
                     <input
@@ -76,8 +77,8 @@ const Login = () => {
                     />
                   </FormGroup>
 
-                  <button type='submit' className='buy__btn auth__btn'>
-                    Login
+                  <button onClick={handleGoogle} className='buy__btn auth__btn'>
+                    Login with Google
                   </button>
                   <p>
                     Don't have an account{' '}
